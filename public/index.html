@@ -9,10 +9,15 @@
 <body>
     <div class="chat-container">
         <div id="chat-box"></div>
-        <input type="text" id="message-input" placeholder="Type a message...">
-        <button onclick="sendMessage()">Send</button>
+        <div class="input-container">
+            <input type="text" id="username" placeholder="Your name...">
+            <input type="text" id="message-input" placeholder="Type a message...">
+            <button onclick="sendMessage()">Send</button>
+            <button onclick="clearChat()">Clear Chat</button>
+            <button onclick="startVoiceMessage()">🎤</button>
+        </div>
     </div>
-  <p>welcome you chat with aakash in real time</p>
+
     <script src="script.js"></script>
 </body>
 </html>
