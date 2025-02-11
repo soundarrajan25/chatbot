@@ -1,14 +1,18 @@
-body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
+* {
+    box-sizing: border-box;
 }
 
-.chat-container {
-    width: 400px;
-    margin: 50px auto;
+body {
+    margin: 0;
+    font: 0.9em/1.5 'Roboto', sans-serif;
+    cursor: default;
+    background-color: #f4f4f4;
+}
+
+.box {
+    width: 80%;
+    max-width: 400px;
+    margin: 2em auto;
     padding: 20px;
     background: white;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -16,54 +20,84 @@ body {
 }
 
 #chat-box {
-    height: 300px;
+    height: 400px;
     overflow-y: auto;
-    border: 1px solid #ddd;
     padding: 10px;
-    background: #fff;
-    margin-bottom: 10px;
-    border-radius: 5px;
 }
 
-.input-container {
+.message {
+    width: calc(100% - 100px);
+    border-radius: 15px;
+    padding: 1em;
+    margin-bottom: 1em;
+}
+
+.person-a {
     display: flex;
-    flex-direction: column;
-    gap: 10px;
+    align-items: flex-end;
+}
+
+.person-a .message {
+    background: #f8f8f8;
+}
+
+.icon {
+    --size: 40px;
+    width: var(--size);
+    height: var(--size);
+    background: url(https://i.ibb.co/vB9B6G8/mWDLI93.gif);
+    background-position: center;
+    background-size: cover;
+    border-radius: 100%;
+    margin-right: 0.8em;
+    position: relative;
+}
+
+.icon::after {
+    content: ' ';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: lightgreen;
+    border-radius: 100%;
+    bottom: 0;
+    right: 0;
+}
+
+.person-b .message {
+    background: lightblue;
+    margin-left: 100px;
+    color: white;
+    text-align: right;
+}
+
+.message svg {
+    height: 26px;
+    vertical-align: middle;
+}
+
+.last {
+    width: auto;
 }
 
 input {
+    width: calc(100% - 80px);
     padding: 10px;
+    margin: 10px 0;
     border: 1px solid #ddd;
     border-radius: 5px;
 }
 
 button {
+    width: 70px;
     padding: 10px;
     background: #28a745;
     color: white;
     border: none;
-    cursor: pointer;
     border-radius: 5px;
-    margin: 5px;
+    cursor: pointer;
 }
 
 button:hover {
     background: #218838;
-}
-
-.message {
-    margin: 5px 0;
-    padding: 10px;
-    border-radius: 5px;
-    background: #f1f1f1;
-}
-
-.message.user1 {
-    background: #d1e7dd;
-    align-self: flex-start;
-}
-
-.message.user2 {
-    background: #f8d7da;
-    align-self: flex-end;
 }
